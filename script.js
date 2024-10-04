@@ -21,6 +21,11 @@ function createListElement() {
   // because it's in the function, it only adds it for new items
   function crossOut() {
     li.classList.toggle("done"); //implement me
+    if (li.style.textDecoration == "line-through") {
+      li.style.textDecoration = "None"
+    } else {
+      li.style.textDecoration = "line-through";
+    }
   }
 
   li.addEventListener("click", crossOut);
@@ -29,7 +34,7 @@ function createListElement() {
   // START ADD DELETE BUTTON
 
   var deleteButton = document.createElement("button");
-  deleteButton.appendChild(document.createTextNode("Delete")); //Use the implemented function from below here
+  deleteButton.appendChild(document.createTextNode("X")); //Use the implemented function from below here
   li.appendChild(deleteButton);
 
   deleteButton.addEventListener("click", deleteListItem);
